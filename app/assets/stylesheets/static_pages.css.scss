@@ -1,0 +1,84 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-bottom:150px;
+}
+
+.footer {
+  position: relative;
+  margin-top: -150px;
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+  text-align: center;
+  font-size:80%;
+}
+
+.home-table {
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 0;
+}
+
+.home-tablecell {
+  height: 100%; 
+  display:table-cell; 
+  vertical-align: middle;
+}
+
+.hoverbox {
+    color:white;
+}
+
+.hoverbox:hover {
+    color: black;
+}
+
+h3, h4, h5, h6 {
+  text-align: center;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+hr {
+    border: 0;
+    width: 70%;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+
+.center.navbar .nav,
+.center.navbar .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+
+.center .navbar-inner {
+    text-align:center;
+}
+
+.dropdown {
+  text-align: left;
+}

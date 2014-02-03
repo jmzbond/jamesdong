@@ -1,0 +1,54 @@
+<% provide(:title, 'Get in touch') %>
+<div class="container-fluid"> 
+
+  <div class="col-xs-10 col-xs-offset-1">
+  	<h4>GET IN TOUCH</h4>
+    <h5>
+    I welcome questions, feedback, thoughts, etc. Please use the form below to get in touch with me. Thank you!
+    </h5>
+    <hr>
+
+    <div class="col-xs-10 col-xs-offset-1">
+    
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          <p>The form contains <%= pluralize(@contact.errors.count, "error") %>:</p>
+        </br>
+        <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+        </div>
+      </div>
+  	<% end %>
+
+    <% flash.each do |key, value| %>
+     	<div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+
+	  <%= form_for @contact do |f| %>
+
+	    <div class="form-group">
+	      <%= f.label :name %>
+	      <%= f.text_field :name, class: "form-control", placeholder: "A name you want me to call you" %>
+	    </div>
+
+	    <div class="form-group">
+	      <%= f.label :email %>
+	      <%= f.text_field :email, class: "form-control", placeholder: "Your real email; don't worry we'll keep it under lock and key" %>
+	    </div>
+
+	    <div class="form-group">
+	      <%= f.label :comment %>
+	      <%= f.text_area :comment, class: "form-control", placeholder: "Speak your mind here" %>
+	    </div>
+
+	    <%= f.submit "Hit me up!", class: "btn btn-primary btn-large btn-block" %>
+	  
+	  <% end %>
+	</div>
+
+</div>
+</div>

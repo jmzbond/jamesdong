@@ -1,0 +1,37 @@
+<% provide(:title, 'Photography Services') %>
+<div class="container-fluid">
+
+    <div class="col-xs-12 col-xs-offset-1">
+        <% @images.each do |image| %>
+        <div class="col-xs-1">
+            <img src="<%= "/assets/Portrait thumbnails/#{image}.jpg" %>" class="img-responsive" alt="<%= "#{image}" %>">
+            <h6><%= "#{image}" %></h6>
+        </div>
+        <% end %>
+    </div>
+    <hr>
+
+	<div class="col-xs-10 col-xs-offset-1">
+            <h4>MEMORIES OF THAT ONCE-UPON-A-TIME MOMENT</h4>
+            </br>
+            <p>
+            The first time I gave a performance, I was in elementary school.  Standing in front of an audience that appeared to number in the bajillions, I shoved my hands into my pants.  Could everyone see them shaking beneath the thin cotton?  Yet somehow, everything turned out beautifully.  As the applause faded, and the crowd stood to clap, I beamed into the camera.  Whenever I see that photograph, I still smile to myself.  These are the happy memories I want each photo to evoke for you.</p>
+            <p><a href="<%= new_contact_path %>">Contact me</a> to get started.</p>
+        	
+            <p><b>Process</b></p>
+            <ol>
+            	<li><u>Free phone consultation</u> - Let me know what you need (individual portraits, couples engagements, styles, locations, etc.).</li>
+            	<li><u>Booking confirmation</u> - Please complete a formal agreement and pay the 50% deposit to confirm the session.</li> 
+				<li><u>Day-of shoot</u> - Meet & shoot; have fun and be yourself!</li>
+				<li><u>Initial review</u> - Review photos, request edits, & select final photos to keep.</li>
+				<li><u>Final distribution</u> - Receive your photos!</li>
+            </ol>
+	        <p><b>Pricing</b></p>
+            <ul>
+                <li>$200 for a 1-hour session</li>
+				<li>$100 for a 1-hour session</li> 
+            </ul>
+            <p>If you have more questions, <a href="<%= photographer_services_faq_path %>">check out the FAQ!</a></p>            
+    </div>
+</div>
+

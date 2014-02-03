@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jamesdong.com</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+  <%= render 'layouts/ganalytics' %>
+  
+  <!-- enables responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="container-fluid home-table">
+    <div class="home-tablecell">
+    	<div class="col-xs-12">
+    		<h3>Living life to the fullest and exploring my passions</h3>
+    		</br>
+    		</br>
+    	</div>
+
+      <div class="col-xs-2 col-xs-offset-3 hoverbox"> 
+        <a href="<%= photographer_path %>" class="thumbnail"><img src="/assets/Home thumbnails/photographer.jpg" class="img-responsive" alt="Photographer"></a>
+        <h4>Photographer</h4>
+      </div>
+      <div class="col-xs-2 hoverbox">
+        <a href="#" class="thumbnail"><img src="/assets/Home thumbnails/entrepreneur.jpg" class="img-responsive" alt="Entrepreneur"></a>
+        <h4>Entrepreneur</h4>
+      </div>
+      <div class="col-xs-2 hoverbox">
+        <a href="#" class="thumbnail"><img src="/assets/Home thumbnails/foodie.jpg" class="img-responsive" alt="Foodie"></a>
+        <h4>Foodie</h4>
+      </div>
+    </div>
+	</div>
+
+
+</body>
+</html>

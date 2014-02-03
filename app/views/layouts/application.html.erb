@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+  <%= render 'layouts/ganalytics' %>
+
+  <% if @miscpage == true %>
+    <%= render 'layouts/mischeader' %>
+  <% elsif @gallerypage == true %>  
+    <%= render 'layouts/galleryhead' %> <!-- requirement of bootstrap image gallery add on -->
+  <% elsif @photopage == true %>
+    <%= render 'layouts/photoheader' %>
+  <% end %> 
+  
+  <!-- enables responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+</head>
+<body>
+
+  	<%= yield %>
+
+</body>
+  <%= render 'layouts/footer' %>
+  <% if @gallerypage == true %>
+    <%= render 'layouts/galleryfoot' %> <!-- requirement of bootstrap image gallery add on -->
+  <% end %>
+</html>
