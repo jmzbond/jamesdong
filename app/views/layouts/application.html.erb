@@ -10,11 +10,13 @@
 
   <% if @miscpage == true %>
     <%= render 'layouts/mischeader' %>
-  <% elsif @gallerypage == true %>  
-    <%= render 'layouts/galleryhead' %> <!-- requirement of bootstrap image gallery add on -->
   <% elsif @photopage == true %>
     <%= render 'layouts/photoheader' %>
   <% end %> 
+
+  <% if @gallerypage == true %>
+    <%= render 'layouts/galleryhead' %> <!-- requirement of bootstrap image gallery add on -->
+  <% end %>
   
   <!-- enables responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
