@@ -1,65 +1,25 @@
 <% provide(:title, 'The Deep South') %>
 <div class="container-fluid"> 
 
-  <div class="col-xs-10 col-xs-offset-1">
-	<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-	<div id="blueimp-gallery" class="blueimp-gallery">
-	    <!-- The container for the modal slides -->
-	    <div class="slides"></div>
-	    <!-- Controls for the borderless lightbox -->
-	    <h3 class="title"></h3>
-	    <a class="prev">‹</a>
-	    <a class="next">›</a>
-	    <a class="close">×</a>
-	    <a class="play-pause"></a>
-	    <ol class="indicator"></ol>
-	    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-	    <div class="modal fade">
-	        <div class="modal-dialog">
-	            <div class="modal-content">
-	                <div class="modal-header">
-	                    <button type="button" class="close" aria-hidden="true">&times;</button>
-	                    <h4 class="modal-title"></h4>
-	                </div>
-	                <div class="modal-body next"></div>
-	                <div class="modal-footer">
-	                    <button type="button" class="btn btn-default pull-left prev">
-	                        <i class="glyphicon glyphicon-chevron-left"></i>
-	                        Previous
-	                    </button>
-	                    <button type="button" class="btn btn-primary next">
-	                        Next
-	                        <i class="glyphicon glyphicon-chevron-right"></i>
-	                    </button>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+    <div class="col-xs-8 col-xs-offset-2">
+    		<h4>THE DEEP SOUTH</h4>
+            </br>
+            <p>
+            I recently went on an expedition to South Georgia, the Falkland Islands, & Antarctica.  The entire trip I felt so… big—like a giant whose next step would be a crush.  As someone who grew up immersed in environmental sustainability, this reaction surprised me.  But it was easy to see why--walking physically among hundreds of thousands of penguins & seals, I could see how much they reacted to my presence from even an Olympic swimming pool's distance away.  With these photographs, I wanted to show the faces of those changed forever by decisions we make everyday, from half a planet away.  If you're interested in purchasing a print, <a href="<%= new_contact_path %>">please contact me</a>.
+            </p>
+            </br>
+  	</div>
 
-	<div id="links">
-	    <a href="/assets/Antarctica photos/Leopard seal under the brash.jpg/" title="Leopard seal under the brash" data-gallery>
-	    	<img src="/assets/Antarctica thumbnails/Leopard seal under the brash.jpg" width="200" height="200" class="img-responsive" alt="Leopard seal under the brash">
-	    </a>
-	    <a href="/assets/Antarctica photos/Iceberg float.jpg/" title="Iceberg float" data-gallery>
-	        <img src="/assets/Antarctica thumbnails/Iceberg float.jpg" class="img-responsive" alt="Iceberg float">
-	    </a>
-	    <a href="/assets/Antarctica photos/Juvenile albatross.jpg/" title="Juvenile albatross" data-gallery>
-	        <img src="/assets/Antarctica thumbnails/Juvenile albatross.jpg" class="img-responsive" alt="Juvenile albatross">
-	    </a>
-	    <a href="/assets/Antarctica photos/First landing at South Georgia.jpg/" title="First landing at South Georgia" data-gallery>
-	        <img src="/assets/Antarctica thumbnails/First landing at South Georgia.jpg" class="img-responsive" alt="First landing at South Georgia">
-	    </a>
-	    <a href="/assets/Antarctica photos/Ferocious fur seal.jpg/" title="Ferocious fur seal" data-gallery>
-	        <img src="/assets/Antarctica thumbnails/Ferocious fur seal.jpg" class="img-responsive" alt="Ferocious fur seal">
-	    </a>
-	    <a href="/assets/Antarctica photos/Steamer duck taking off.jpg/" title="Steamer duck taking off" data-gallery>
-	        <img src="/assets/Antarctica thumbnails/Steamer duck taking off.jpg" class="img-responsive" alt="Steamer duck taking off">
-	    </a>
-	    <a href="/assets/Antarctica photos/Elephant seals hanging out.jpg/" title="Elephant seals hanging out" data-gallery>
-	        <img src="/assets/Antarctica thumbnails/Elephant seals hanging out.jpg" class="img-responsive" alt="Elephant seals hanging out">
-	    </a>
-
+	<div class="col-xs-12">
+		<div class="galleria">
+		</div>
+		<script>
+	        Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+	        Galleria.run('.galleria', {
+			    responsive: true,   // Adapt to screen size
+		        height: 0.5625,      // Keep a 16:9 aspect ratio
+		        flickr: 'set:72157602531449282',
+			});
+	    </script>
 	</div>
-  </div>
 </div>
