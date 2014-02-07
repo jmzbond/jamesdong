@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-  @contactme = "If you're interested in purchasing a print, please <a href='<%= new_contact_path %>'>please contact me</a>".html_safe
 
   def home
     render layout: false
