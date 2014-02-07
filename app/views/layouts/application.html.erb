@@ -15,14 +15,18 @@
   <% end %> 
 
   <% if @gallerypage == true %>
-    <%= render 'layouts/galleryhead' %> <!-- requirement of galleria addon -->
+    <%= render 'layouts/galleryhead' %> <!-- galleria add-on + intro text for each page -->
+  <% else %>
+    </head>
+    <body>
+    <div class="container-fluid">
   <% end %>
-  
-</head>
-<body>
 
   	<%= yield %>
 
+  </div>
 </body>
+
   <%= render 'layouts/footer' %>
+
 </html>

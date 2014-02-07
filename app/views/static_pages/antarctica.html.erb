@@ -1,14 +1,4 @@
 <% provide(:title, 'The Deep South') %>
-<div class="container-fluid"> 
-
-    <div class="col-xs-8 col-xs-offset-2">
-    		<h4>THE DEEP SOUTH</h4>
-            </br>
-            <p>
-            I recently went on an expedition to South Georgia, the Falkland Islands, & Antarctica.  The entire trip I felt so… big—like a giant whose next step would be a crush.  As someone who grew up immersed in environmental sustainability, this reaction surprised me.  But it was easy to see why--walking physically among hundreds of thousands of penguins & seals, I could see how much they reacted to my presence from even an Olympic swimming pool's distance away.  With these photographs, I wanted to show the faces of those changed forever by decisions we make everyday, from half a planet away.  If you're interested in purchasing a print, <a href="<%= new_contact_path %>">please contact me</a>.
-            </p>
-            </br>
-  	</div>
 
 	<div class="col-xs-12">
 		<div class="galleria">
@@ -18,8 +8,11 @@
 	        Galleria.run('.galleria', {
 			    responsive: true,   // Adapt to screen size
 		        height: 0.5625,      // Keep a 16:9 aspect ratio
-		        flickr: 'set:72157602531449282',
+		        showCounter: false,
+		        flickr: 'set:72157640607666844',
+		        flickrOptions: {
+			        imageSize: 'big'
+			    }
 			});
 	    </script>
 	</div>
-</div>

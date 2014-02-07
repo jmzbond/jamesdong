@@ -219,8 +219,8 @@ Galleria.Flickr.prototype = {
 
     _getBig: function( photo ) {
 
-        if ( photo.url_l ) {
-            return photo.url_l;
+        if ( photo.url_h ) {
+            return photo.url_h;
         } else if ( parseInt( photo.width_o, 10 ) > 1280 ) {
 
             return 'http://farm'+photo.farm + '.static.flickr.com/'+photo.server +
@@ -270,7 +270,7 @@ Galleria.Flickr.prototype = {
 
         params = $.extend({
             method: 'flickr.photos.search',
-            extras: 'url_t,url_m,url_o,url_s,url_l,url_z,description',
+            extras: 'url_t,url_m,url_o,url_s,url_h,url_z,description',
             sort: this.options.sort,
             per_page: Math.min( this.options.max, 500 )
         }, params );
