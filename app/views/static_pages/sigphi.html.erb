@@ -1,1 +1,19 @@
 <% provide(:title, 'The Stars Reply') %>
+
+	<div class="col-xs-12">
+		<div class="galleria">
+		</div>
+		<script>
+	        Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+	        Galleria.run('.galleria', {
+			    responsive: true,   // Adapt to screen size
+		        height: 0.5625,      // Keep a 16:9 aspect ratio
+		        showCounter: false,
+		        flickr: 'set:72157640607311854',
+		        flickrOptions: {
+			        imageSize: 'big'
+			    }
+			});
+	    </script>
+	</div>
+
