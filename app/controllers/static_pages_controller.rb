@@ -41,6 +41,11 @@ class StaticPagesController < ApplicationController
       @gallerypage = true
     end
 
+    def portrait
+      @photopage = true
+      @gallerypage = true
+    end
+
     def yosemite
       @photopage = true
       @gallerypage = true
