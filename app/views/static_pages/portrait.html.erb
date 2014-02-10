@@ -1,11 +1,23 @@
+<% provide(:title, 'Portrait Portfolio') %>    
+
+    <style>
+    /* this section is a hack to make the portraits not have to have titles */
+    .galleria-stage { margin-top: 0px }
+    .galleria-info-title { font: bold 12px/1.1 arial,sans-serif; color: black; opacity: 0;}
+    </style>
+
     <div class="col-xs-2 col-xs-offset-1">
         <div id="menu">
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640611296255/">Urban Playgrounds</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640612568393/">Natural Environments</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640610294955/">Human Expressions</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640607561055/">Reflections in Yosemite</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640607666844/">The Deep South</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640607311854/">The Stars Reply</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640765167734/">UC Berkeley Engagement</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640763199093/">Crissy Field Vacation</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640763032343/">City Hall Marriage</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640764173323/">UC Berkeley Engagement (2)</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640763289263/">Downtown SF Headshots</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640760546905/">San Francisco Engagement</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640761489075/">SF & Berkeley Engagement</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640761383585/">Palace of Fine Arts Engagement</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640764253653/">Palace of Fine Arts Photoshoot</a>
+            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640764682524/">Engagement Party</a>
         </div>
     </div>
 
@@ -25,9 +37,9 @@
         var elem = $('#galleria');
 
         // create and append the loader growl
-        var loader = $('<div>', {
-            id: 'loader'
-        }).appendTo('#gallery');
+        //var loader = $('<div>', {
+        //    id: 'loader'
+        //}).appendTo('#gallery');
 
         // a local var used later
         var set;
@@ -50,13 +62,13 @@
             set = set[set.length-2];
 
             // add loader text and show
-            loader.text('Loading '+$(this).text()).show();
+            //loader.text('Loading '+$(this).text()).show();
 
             // load the set
             flickr.set(set, function(data) {
 
                 // hide the loader
-                loader.fadeOut('fast');
+                //loader.fadeOut('fast');
 
                 // check if galleria has been initialized
                 if (elem.data('galleria')) {

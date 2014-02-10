@@ -1,5 +1,11 @@
 <% provide(:title, 'Photography Services') %>
 
+    
+    <div class="col-xs-10 col-xs-offset-1">
+    <h4><a href="<%= photographer_portraits_path %>">Portrait Portfolio</a></h4>
+    </br>
+    </div>
+
     <div class="col-xs-12 col-xs-offset-1">
         <% @images.each do |image| %>
         <div class="col-xs-1">
@@ -15,7 +21,7 @@
             </br>
             <p>
             The first time I gave a performance, I was in elementary school.  Standing in front of an audience that appeared to number in the bajillions, I shoved my hands into my pants.  Could everyone see them shaking beneath the thin cotton?  Yet somehow, everything turned out beautifully.  As the applause faded, and the crowd stood to clap, I beamed into the camera.  Whenever I see that photograph, I still smile to myself.  These are the happy memories I want each photo to evoke for you.</p>
-            <p><a href="<%= new_contact_path %>">Contact me</a> to get started.</p>
+            <p><a href="<%= new_contact_path %>">Contact me</a> to get started. Or <a href="<%= photographer_portraits_path %>">click here</a> to visit my portrait portfolio.</p> 
         	
             <p><b>Process</b></p>
             <ol>
