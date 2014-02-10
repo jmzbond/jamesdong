@@ -1,6 +1,18 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="/assets/galleria/galleria-1.3.5.min.js"></script>
+<script src="/assets/galleria/plugins/flickr/galleria.flickr.min.js"></script>
 <style>
 /*Note original galleria.classic.css completely untouched, all changes built on top of it here*/
+
+/* can't figure a way to fold this into the regular galleria... this section is for the portrait gallery, which uses div IDs and then luckily teh changes below for normal galleria's which are also applied, just build on what's the div ids without conflict*/
+
+    #galleria { width:100%; position:relative; height:0; padding-bottom:56%;}
+    #loader { width:200px; height:100px; margin:-50px 0 0 -100px; position:absolute; left:50%; top:50%; color:#fff; text-align:center;
+        z-index:4; display:none; background:#000 url('/assets/galleria/themes/classic/classic-loader.gif') no-repeat 50% 25px; opacity:.8; line-height:150px; border-radius:6px }
+    #menu { border-top:1px solid #2b2b2b }
+    #menu a { display:block; padding:5px 5px; border-bottom:1px solid #2b2b2b }
+    #menu a:hover { background:#151515; background:rgba(0,0,0,.1); }
+    #menu a.active { background:#111; background:rgba(0,0,0,.3); color:#fff }
 
 /* changes size of container, combines with height 0.5625 aspect ratio in actual html view */
 .galleria { width: 90%; margin: 0 auto }
@@ -8,7 +20,7 @@
 /* converts from white arrows & text on black background to black arrows on white backgroun */
 .galleria-container { background: transparent }
 .galleria-image-nav-left, .galleria-image-nav-right { background-image: url(/assets/galleria/themes/classic/arrows.png) }
-.galleria-counter { color: black }
+.galleria-counter { color: transparent } /*normally should be black, and then in each galleria instance I turn the counter off, but the problem is that on the multi-galleria, there is no turn off, so this is the cop-out*/
 
 /*centers the title of the image across the galleria box rather than fixed to upper left hand corner. note, the information toggler turned off in native min.JS and JS (line 23) files for theme*/
 .galleria-info { width: 100%; top: 0px; left: 0px }

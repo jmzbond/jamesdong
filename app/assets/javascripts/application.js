@@ -17,5 +17,3 @@
 
 // Loads all Bootstrap javascripts
 //= require bootstrap
-
-//= require galleria/galleria-1.3.5.min.js
