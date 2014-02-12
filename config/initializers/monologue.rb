@@ -20,7 +20,7 @@ Monologue.config do |config|
 
   # ANALYTICS
   # config.gauge_analytics_site_id = "YOUR COGE FROM GAUG.ES"
-  # config.google_analytics_id = "YOUR GA CODE"
+  config.google_analytics_id = 'UA-47062117-2'
 
   config.sidebar = ["latest_posts", "latest_tweets", "categories", "tag_cloud"]
 
