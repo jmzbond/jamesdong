@@ -43,5 +43,6 @@ Jamesdong::Application.configure do
   # Send email in development mode.
   config.action_mailer.perform_deliveries = true
 
+  #config.action_controller.perform_caching = false #cache support removed in master branch
 
 end

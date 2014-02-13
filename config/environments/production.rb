@@ -96,4 +96,8 @@ Jamesdong::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  ActionController::Base.perform_caching = true
+  #config.action_controller.perform_caching = false #cache support removed in master branch
+  
 end

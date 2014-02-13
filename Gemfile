@@ -3,6 +3,7 @@ ruby '1.9.3'
 
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '3.0.3.0'
+gem 'monologue', :git => 'git://github.com/jipiboily/monologue.git', :branch =>'master' 
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
