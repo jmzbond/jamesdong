@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   end
   
   def entrepreneur
+    @entrepage = true
   end
 
   def foodie

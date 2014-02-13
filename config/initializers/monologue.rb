@@ -3,8 +3,8 @@ Monologue.config do |config|
   config.site_subtitle = "Earning my stripes as an entrepreneur"
   config.site_url = "http://www.jamesdong.com"
 
-  config.meta_description = "Personal site about my start-up journey, and my other life's passions, photography, food, traveling, etc."
-  config.meta_keyword = "entrepreneurship, james dong, sharing economy, photography"
+  config.meta_description = "Personal site about my start-up journey & my life passions." 
+  config.meta_keyword = "entrepreneurship, james dong, sharing economy, collaborative consumption"
 
   config.admin_force_ssl = false
   config.posts_per_page = 10
@@ -27,8 +27,8 @@ Monologue.config do |config|
 
   #SOCIAL
   config.twitter_username = "bsemaj"
-  config.facebook_url = "https://www.facebook.com/profile.php?id=1242224"
-  config.facebook_logo = 'logo.png'
+  #config.facebook_url = "https://www.facebook.com/profile.php?id=1242224"
+  #config.facebook_logo = 'logo.png'
   #config.google_plus_account_url = "https://plus.google.com/u/1/115273180419164295760/posts"
   config.linkedin_url = "http://www.linkedin.com/in/jmzbond"
   #config.github_username = "jmzbond"
