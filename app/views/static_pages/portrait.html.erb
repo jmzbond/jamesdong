@@ -28,7 +28,7 @@
     <script>
 
         // load the theme
-        Galleria.loadTheme("<%= javascript_include_tag 'galleria.classic.min.js', '/galleria/themes/classic' %>");
+        Galleria.loadTheme("<%= asset_path "/galleria.classic.min.js" %>");
 
         // create a flickr instance
         var flickr = new Galleria.Flickr();
