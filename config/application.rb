@@ -19,6 +19,9 @@ module Jamesdong
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.assets.precompile += ['galleria.classic.min.js', 'galleria.flickr.min.js', 'galleria-1.3.5.min.js']
+    #config.assets.precompile += %w(vendor/assets/javascripts/galleria/galleria-1.3.5.min.js)
+    #config.assets.precompile += %w(vendor/assets/javascripts/galleria/plugins/flickr/galleria.flickr.min.js)
+    #config.assets.precompile += %w(vendor/assets/javascripts/galleria/themes/classic/galleria.classic.min.js)
+    #config.assets.precompile += %w(vendor/assets/javascripts/galleria/themes/classic/galleria.classic.min.css)
   end
 end
