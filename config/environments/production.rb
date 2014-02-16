@@ -89,8 +89,6 @@ Jamesdong::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 
-  
-
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
@@ -100,4 +98,7 @@ Jamesdong::Application.configure do
   ActionController::Base.perform_caching = true
   #config.action_controller.perform_caching = false #cache support removed in master branch
   
+  #config.assets.precompile += %w( galleria.classic.min.js )
+  #config.assets.precompile += ['galleria.classic.min.js', 'galleria.flickr.min.js', 'galleria-1.3.5.min.js']
+  #config.assets.precompile = [/^[^_]/]
 end
