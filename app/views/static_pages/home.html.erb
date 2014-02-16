@@ -20,16 +20,15 @@
     	</div>
 
       <div class="col-xs-2 col-xs-offset-3 hoverbox"> 
-        <a href="<%= photographer_path %>" class="thumbnail"><img src="/assets/Home thumbnails/Photographer.jpg" class="img-responsive" alt="Photographer"></a>
+        <%= link_to(image_tag("Home thumbnails/Photographer.jpg", class: "img-responsive"), photographer_path, class: "thumbnail") %>
         <h4>Photographer</h4>
       </div>
       <div class="col-xs-2 hoverbox">
-        <a href="<%= entrepreneur_path %>" class="thumbnail"><%= image_url("/Home thumbnails/Entrepeneur.jpg", alt: "Entrepreneur", class: "responsive") %></a>
+        <%= link_to(image_tag("Home thumbnails/Entrepreneur.jpg", class: "img-responsive"), entrepreneur_path, class: "thumbnail") %>
         <h4>Entrepreneur</h4>
-
       </div>
       <div class="col-xs-2 hoverbox">
-        <a href="#" class="thumbnail"><img src="/assets/Home thumbnails/Foodie.jpg" class="img-responsive" alt="Foodie"></a>
+        <%= link_to(image_tag("Home thumbnails/Foodie.jpg", class: "img-responsive"), "#", class: "thumbnail") %>
         <h4>Foodie</h4>
       </div>
     </div>
