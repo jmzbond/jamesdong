@@ -97,8 +97,5 @@ Jamesdong::Application.configure do
 
   ActionController::Base.perform_caching = true
   #config.action_controller.perform_caching = false #cache support removed in master branch
-  
-  #config.assets.precompile += %w( galleria.classic.min.js )
-  #config.assets.precompile += ['galleria.classic.min.js', 'galleria.flickr.min.js', 'galleria-1.3.5.min.js']
-  #config.assets.precompile = [/^[^_]/]
+
 end
