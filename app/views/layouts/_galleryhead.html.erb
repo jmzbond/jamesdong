@@ -1,6 +1,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script src="<%= javascript_include_tag "galleria-1.3.5.min.js", "/galleria" %>"></script>
-<script src="<%= javascript_include_tag "galleria.flickr.min.js", "/galleria/plugins/flickr" %>"></script>
+<%= javascript_include_tag "galleria-1.3.5.min.js", "/galleria" %>">
+<%= javascript_include_tag "galleria.flickr.min.js", "/galleria/plugins/flickr" %>
+<%= javascript_include_tag "galleria.classic.min.js", "/galleria/themes/classic" %>
+
 <style>
 /*Note original galleria.classic.css completely untouched, all changes built on top of it here*/
 
@@ -19,7 +21,7 @@
 
 /* converts from white arrows & text on black background to black arrows on white backgroun */
 .galleria-container { background: transparent }
-.galleria-image-nav-left, .galleria-image-nav-right { background-image: "<%= image_alt "/galleria/themes/classic/arrows.png" %>" }
+.galleria-image-nav-left, .galleria-image-nav-right { background-image: "<%= asset_path "/galleria/themes/classic/arrows.png" %>" }
 .galleria-counter { color: transparent } /*normally should be black, and then in each galleria instance I turn the counter off, but the problem is that on the multi-galleria, there is no turn off, so this is the cop-out*/
 
 /*centers the title of the image across the galleria box rather than fixed to upper left hand corner. note, the information toggler turned off in native min.JS and JS (line 23) files for theme*/
