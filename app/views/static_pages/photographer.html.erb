@@ -20,12 +20,11 @@
         <div class="col-xs-12 col-xs-offset-3">
             <% @favimages.each do |image| %>
             <div class="col-xs-2">
-                <a href="<%= asset_path "photographer/#{image.downcase.tr(' ','_')}" %>" class="thumbnail"><img src="<%= "/assets/Photographer thumbnails/#{image}.jpg" %>" class="img-responsive" alt="<%= "#{image}" %>"></a>
+                <%= link_to(image_tag("Photographer thumbnails/#{image}.jpg", class: "img-responsive"), "photographer/#{image.downcase.tr(' ','_')}", class: "thumbnail") %>
                 <h6><%= "#{image}" %></h6>
             </div>
             <% end %>
         </div>
-
 
         </br>
         <hr>
@@ -37,7 +36,7 @@
         <div class="col-xs-12 col-xs-offset-3">
             <% @seriesimages.each do |image| %>
             <div class="col-xs-2">
-                <a href="<%= asset_path "photographer/#{image.downcase.tr(' ','_')}" %>" class="thumbnail"><img src="<%= "/assets/Photographer thumbnails/#{image}.jpg" %>" class="img-responsive" alt="<%= "#{image}" %>"></a>
+                <%= link_to(image_tag("Photographer thumbnails/#{image}.jpg", class: "img-responsive"), "photographer/#{image.downcase.tr(' ','_')}", class: "thumbnail") %>
                 <h6><%= "#{image}" %></h6>
             </div>
             <% end %>

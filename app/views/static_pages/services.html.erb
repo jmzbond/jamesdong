@@ -9,9 +9,10 @@
     <div class="col-xs-12 col-xs-offset-1">
         <% @images.each do |image| %>
         <div class="col-xs-1">
-            <img src="<%= "/assets/Portrait thumbnails/#{image}.jpg" %>" class="img-responsive" alt="<%= "#{image}" %>">
+            <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive") %>
             <h6><%= "#{image}" %></h6>
         </div>
+
         <% end %>
     </div>
     <hr>
