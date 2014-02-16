@@ -4,7 +4,7 @@
 		<div class="galleria">
 		</div>
 		<script>
-	        Galleria.loadTheme("<%= asset_url('/galleria/themes/classic/galleria.classic.min.js')%>");
+	        Galleria.loadTheme("<%= javascript_include_tag 'galleria.classic.min.js', '/galleria/themes/classic' %>");
 	        Galleria.run('.galleria', {
 			    responsive: true,   // Adapt to screen size
 		        height: 0.5625,      // Keep a 16:9 aspect ratio
