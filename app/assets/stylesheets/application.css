@@ -10,5 +10,5 @@
  *
  *= require_self
  *= require_tree .
- *= require galleria.classic.css.scss
+ *= require galleria.classic.css.scss.erb
  */
