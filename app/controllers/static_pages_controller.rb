@@ -53,6 +53,7 @@ class StaticPagesController < ApplicationController
     end
 
     def services
+      require 
       @photopage = true
       @gallerypage = true
       @images = ["UC Berkeley Engagement", 
