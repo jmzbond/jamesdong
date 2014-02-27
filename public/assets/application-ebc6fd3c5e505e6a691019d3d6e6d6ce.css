@@ -5061,12 +5061,15 @@ body {
   display: table-cell;
   vertical-align: middle; }
 
+/*
 .hoverbox {
-  color: white; }
+    color:white;
+}
 
 .hoverbox:hover {
-  color: black; }
-
+    color: black;
+}
+*/
 h3, h4, h5, h6 {
   text-align: center;
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; }
