@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def foodie
+    @foodpage = true
   end
 
   def photographer
