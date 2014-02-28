@@ -41,11 +41,26 @@ class StaticPagesController < ApplicationController
     def antarctica
       @photopage = true
       @gallerypage = true
+      @test = 72157640607666844
+      gon.test = @test
     end
 
     def portrait
       @photopage = true
       @gallerypage = true
+      @images = {
+        "UC Berkeley Engagement" => 72157640765167734, 
+        "Crissy Field Vacation Shots" => 72157640763199093, 
+        "City Hall Marriage" => 72157640763032343, 
+        "UC Berkeley Engagement (2)" => 72157640764173323, 
+        "Downtown SF Headshots" => 72157640763289263, 
+        "San Francisco Engagement" => 72157640760546905, 
+        "SF & Berkeley Engagement" => 72157640761489075, 
+        "Palace of Fine Arts Engagement" => 72157640761383585, 
+        "Palace of Fine Arts Photoshoot" => 72157640764253653, 
+        "Engagement Party" => 72157640764682524
+      }
+      gon.images = @images
     end
 
     def yosemite
@@ -54,19 +69,21 @@ class StaticPagesController < ApplicationController
     end
 
     def services
-      require 
       @photopage = true
       @gallerypage = true
-      @images = ["UC Berkeley Engagement", 
-        "Crissy Field Vacation Shots", 
-        "City Hall Marriage", 
-        "UC Berkeley Engagement (2)", 
-        "Downtown SF Headshots", 
-        "San Francisco Engagement", 
-        "SF & Berkeley Engagement", 
-        "Palace of Fine Arts Engagement", 
-        "Palace of Fine Arts Photoshoot", 
-        "Engagement Party"]
+      @images = {
+        "UC Berkeley Engagement" => 72157640765167734, 
+        "Crissy Field Vacation Shots" => 72157640763199093, 
+        "City Hall Marriage" => 72157640763032343, 
+        "UC Berkeley Engagement (2)" => 72157640764173323, 
+        "Downtown SF Headshots" => 72157640763289263, 
+        "San Francisco Engagement" => 72157640760546905, 
+        "SF & Berkeley Engagement" => 72157640761489075, 
+        "Palace of Fine Arts Engagement" => 72157640761383585, 
+        "Palace of Fine Arts Photoshoot" => 72157640764253653, 
+        "Engagement Party" => 72157640764682524
+      }
+      gon.images = @images
     end
 
       def faq

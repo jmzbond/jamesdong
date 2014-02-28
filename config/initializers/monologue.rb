@@ -1,3 +1,4 @@
+=begin
 Monologue.config do |config|
   config.site_name = "James Dong"
   config.site_subtitle = "Earning my stripes as an entrepreneur"
@@ -37,3 +38,5 @@ Monologue.config do |config|
 end
 
 #Monologue::PageCache.enabled = true, says uninitialized constant Monologue, because cache support removed in master branch
+
+=end

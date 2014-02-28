@@ -1,104 +1,41 @@
 <% provide(:title, 'Portrait Portfolio') %>    
 
-    <style>
+    <!-- <style>
     /* this section is a hack to make the portraits not have to have titles */
     .galleria-stage { margin-top: 0px }
     .galleria-info-title { font: bold 12px/1.1 arial,sans-serif; color: black; opacity: 0;}
-    </style>
+    </style> -->
 
-    <div class="col-xs-2 col-xs-offset-1">
-        <div id="menu">
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640765167734/">UC Berkeley Engagement</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640763199093/">Crissy Field Vacation</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640763032343/">City Hall Marriage</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640764173323/">UC Berkeley Engagement (2)</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640763289263/">Downtown SF Headshots</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640760546905/">San Francisco Engagement</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640761489075/">SF & Berkeley Engagement</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640761383585/">Palace of Fine Arts Engagement</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640764253653/">Palace of Fine Arts Photoshoot</a>
-            <a href="http://www.flickr.com/photos/15470384@N06/sets/72157640764682524/">Engagement Party</a>
+    <div class="col-xs-12 col-xs-offset-1">
+        <% @images.each do |image, key| %>
+        <div class="col-xs-1" id="<%= "#{image}" %>"> 
+            <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive") %>
+            <h6><%= "#{image}" %></h6>
         </div>
+
+        <% end %>
     </div>
+    <hr>
 
-    <div class="col-xs-8">
-        <div id="galleria"></div>
+    <div class="col-xs-12">
+        <div class="galleria">
+        </div>
+            <script>
+                for ( var image in gon.images )
+                    console.log("set:" + gon.images[image])
+                    document.getElementById(image).onclick = function()
+                    {
+                        Galleria.loadTheme("<%= asset_path 'galleria.classic.min.js' %>");
+                        Galleria.run('.galleria', {
+                            responsive: true,   // Adapt to screen size
+                            height: 0.5625,      // Keep a 16:9 aspect ratio
+                            showCounter: false,
+                            flickr:"set:" + gon.images[image],
+                            flickrOptions: {
+                                imageSize: 'big'
+                            }
+                        });
+                    }
+
+            </script>
     </div>
-    <p>
-    <script>
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-        var parm = getParameterByName('img_src') ;
-
-        // load the theme
-        Galleria.loadTheme("<%= asset_path 'galleria.classic.min.js' %>");
-
-        // create a flickr instance
-        var flickr = new Galleria.Flickr();
-
-        // cache the gallery
-        var elem = $('#galleria');
-
-        // create and append the loader growl
-        //var loader = $('<div>', {
-        //    id: 'loader'
-        //}).appendTo('#gallery');
-
-        // a local var used later
-        var set;
-
-        // set flickr to fetch description and increase the photo limit
-        flickr.setOptions({
-            imageSize: 'big'
-        });
-
-        // attach event handler for the menu
-        $('#menu a').click(function(e) {
-
-            e.preventDefault();
-
-            // toggle active class
-            $(this).addClass('active').siblings('.active').removeClass('active');
-
-            // extract the set id from the link href
-            set = this.href.split('/');
-            set = set[set.length-2];
-
-            // add loader text and show
-            //loader.text('Loading '+$(this).text()).show();
-
-            // load the set
-            flickr.set(set, function(data) {
-
-                // hide the loader
-                //loader.fadeOut('fast');
-
-                // check if galleria has been initialized
-                if (elem.data('galleria')) {
-
-                    // load galleria with the new data
-                    elem.data('galleria').load( data );
-
-                // else initialize galleria (1st time)
-                } else {
-                    elem.galleria({
-
-                        // add the data as dataSource
-                        dataSource: data,
-
-                    });
-                }
-            });
-        });
-
-        // trigger a click onload so that the first gallery will be displayed when entering
-        $('#menu a').each(function(e){
-            if(this.href == parm)
-                this.click();
-        });
-        // $('#menu a:first-child').click();
-    </script>

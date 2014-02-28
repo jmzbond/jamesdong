@@ -1,23 +1,6 @@
 <% provide(:title, 'Photography Services') %>
 
-    
     <div class="col-xs-10 col-xs-offset-1">
-    <h4><a href="<%= photographer_portraits_path %>">Portrait Portfolio</a></h4>
-    </br>
-    </div>
-
-    <div class="col-xs-12 col-xs-offset-1">
-        <% @images.each do |image| %>
-        <div class="col-xs-1"> 
-            <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive") %>
-            <h6><%= "#{image}" %></h6>
-        </div>
-
-        <% end %>
-    </div>
-    <hr>
-
-	<div class="col-xs-10 col-xs-offset-1">
             <h4>MEMORIES OF THAT ONCE-UPON-A-TIME MOMENT</h4>
             </br>
             <p>
@@ -37,16 +20,16 @@
                 <li>$200 for a 1-hour session</li>
 				<li>$100 for a 1-hour session</li> 
             </ul>
-            <p>If you have more questions, <a href="<%= photographer_services_faq_path %>">check out the FAQ!</a></p>            
+            <p>If you have more questions, <a href="<%= photographer_services_faq_path %>">check out the FAQ!</a></p>
+            <hr>           
     </div>
 
-<script>
-    var img_hash = ["http://www.flickr.com/photos/15470384@N06/sets/72157640765167734/","http://www.flickr.com/photos/15470384@N06/sets/72157640763199093/","http://www.flickr.com/photos/15470384@N06/sets/72157640763032343/","http://www.flickr.com/photos/15470384@N06/sets/72157640764173323/","http://www.flickr.com/photos/15470384@N06/sets/72157640763289263/","http://www.flickr.com/photos/15470384@N06/sets/72157640760546905/","http://www.flickr.com/photos/15470384@N06/sets/72157640761489075/","http://www.flickr.com/photos/15470384@N06/sets/72157640761383585/","http://www.flickr.com/photos/15470384@N06/sets/72157640764253653/","http://www.flickr.com/photos/15470384@N06/sets/72157640764682524/",
-    ]
-    $('.img-responsive').each(function(e){
-        $(this).click(function(){
-            window.location = '/photographer/portraits?img_src='+img_hash[e];
-        });
-        
-    });
-</script>
+    <div class="col-xs-12 col-xs-offset-1">
+        <% @images.each do |image, key| %>
+        <div class="col-xs-1" id="<%= "#{image}" %>"> 
+            <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive") %>
+            <h6><%= "#{image}" %></h6>
+        </div>
+
+        <% end %>
+    </div>
