@@ -5,7 +5,7 @@
             </br>
             <p>
             The first time I gave a performance, I was in elementary school.  Standing in front of an audience that appeared to number in the bajillions, I shoved my hands into my pants.  Could everyone see them shaking beneath the thin cotton?  Yet somehow, everything turned out beautifully.  As the applause faded, and the crowd stood to clap, I beamed into the camera.  Whenever I see that photograph, I still smile to myself.  These are the happy memories I want each photo to evoke for you.</p>
-            <p><a href="<%= new_contact_path %>">Contact me</a> to get started. Or <a href="<%= photographer_portraits_path %>">click here</a> to visit my portrait portfolio.</p> 
+            <p><a href="<%= new_contact_path %>">Contact me</a> to get started. Or see some of my favorite photos from previous sessions below.</p> 
         	
             <p><b>Process</b></p>
             <ol>
@@ -24,12 +24,42 @@
             <hr>           
     </div>
 
+    <div class="col-xs-10 col-xs-offset-1" id="portrait-portfolio">
+        <h4>Portrait Portfolio</h4>
+        </br>
+    </div>
+        
     <div class="col-xs-12 col-xs-offset-1">
         <% @images.each do |image, key| %>
         <div class="col-xs-1" id="<%= "#{image}" %>"> 
-            <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive") %>
+            <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive thumbnail") %>
             <h6><%= "#{image}" %></h6>
         </div>
 
         <% end %>
+    </br>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="galleria">
+        </div>
+            <script>
+                for (var image in gon.images) {
+                    document.getElementById(image).onclick = (function(image) {
+                      return function() {
+                        Galleria.loadTheme("<%= asset_path 'galleria.classic.min.js' %>");
+                        Galleria.run('.galleria', {
+                            responsive: true,   // Adapt to screen size
+                            height: 0.5625,      // Keep a 16:9 aspect ratio
+                            showCounter: false,
+                            flickr:"set:" + gon.images[image],
+                            flickrOptions: {
+                                imageSize: 'big'
+                            }
+                        });
+                      }
+                    })(image);
+                }
+
+            </script>
     </div>

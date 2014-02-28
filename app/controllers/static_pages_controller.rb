@@ -45,20 +45,20 @@ class StaticPagesController < ApplicationController
       gon.test = @test
     end
 
-    def portrait
+    def services
       @photopage = true
       @gallerypage = true
       @images = {
-        "UC Berkeley Engagement" => 72157640765167734, 
-        "Crissy Field Vacation Shots" => 72157640763199093, 
-        "City Hall Marriage" => 72157640763032343, 
-        "UC Berkeley Engagement (2)" => 72157640764173323, 
-        "Downtown SF Headshots" => 72157640763289263, 
-        "San Francisco Engagement" => 72157640760546905, 
-        "SF & Berkeley Engagement" => 72157640761489075, 
-        "Palace of Fine Arts Engagement" => 72157640761383585, 
-        "Palace of Fine Arts Photoshoot" => 72157640764253653, 
-        "Engagement Party" => 72157640764682524
+        "UC Berkeley Engagement" => "72157640765167734", 
+        "Crissy Field Vacation Shots" => "72157640763199093", 
+        "City Hall Marriage" => "72157640763032343", 
+        "UC Berkeley Engagement (2)" => "72157640764173323", 
+        "Downtown SF Headshots" => "72157640763289263", 
+        "San Francisco Engagement" => "72157640760546905", 
+        "SF & Berkeley Engagement" => "72157640761489075", 
+        "Palace of Fine Arts Engagement" => "72157640761383585", 
+        "Palace of Fine Arts Photoshoot" => "72157640764253653", 
+        "Engagement Party" => "72157640764682524"
       }
       gon.images = @images
     end
@@ -66,24 +66,6 @@ class StaticPagesController < ApplicationController
     def yosemite
       @photopage = true
       @gallerypage = true
-    end
-
-    def services
-      @photopage = true
-      @gallerypage = true
-      @images = {
-        "UC Berkeley Engagement" => 72157640765167734, 
-        "Crissy Field Vacation Shots" => 72157640763199093, 
-        "City Hall Marriage" => 72157640763032343, 
-        "UC Berkeley Engagement (2)" => 72157640764173323, 
-        "Downtown SF Headshots" => 72157640763289263, 
-        "San Francisco Engagement" => 72157640760546905, 
-        "SF & Berkeley Engagement" => 72157640761489075, 
-        "Palace of Fine Arts Engagement" => 72157640761383585, 
-        "Palace of Fine Arts Photoshoot" => 72157640764253653, 
-        "Engagement Party" => 72157640764682524
-      }
-      gon.images = @images
     end
 
       def faq

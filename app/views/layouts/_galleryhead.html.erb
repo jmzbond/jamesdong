@@ -6,17 +6,6 @@
 <style>
 /*Note original galleria.classic.css completely untouched, all changes built on top of it here*/
 
-/* can't figure a way to fold this into the regular galleria... this section is for the portrait gallery, which uses div IDs and then luckily teh changes below for normal galleria's which are also applied, just build on what's the div ids without conflict*/
-/*
-    #galleria { width:100%; position:relative; height:0; padding-bottom:56%;}
-    /*#loader { width:200px; height:100px; margin:-50px 0 0 -100px; position:absolute; left:50%; top:50%; color:#fff; text-align:center;
-        z-index:4; display:none; background:#000 url('/assets/galleria/themes/classic/classic-loader.gif') no-repeat 50% 25px; opacity:.8; line-height:150px; border-radius:6px } */
- /*   #menu { margin-top: 10px; border-top:1px solid #2b2b2b }
-    #menu a { display:block; padding:5px 5px; border-bottom:1px solid #2b2b2b }
-    #menu a:hover { background:#151515; background:rgba(0,0,0,.1); }
-    #menu a.active { background:#111; background:rgba(0,0,0,.3); color:#fff }
-*/
-
 /* changes size of container, combines with height 0.5625 aspect ratio in actual html view */
 .galleria { width: 90%; margin: 0 auto }
 
@@ -97,15 +86,6 @@
 	            </br>
 	            <p>
 	            A selection of my favorite photographs of unsuspecting friends and strangers. Here I try to really capture the fleeting masks we're constantly peeking out from behind. <%= Contact::CONTACTME %>
-	            </p>
-	        	</br>
-
-	        <% elsif content_for(:title) == 'Portrait Portfolio' %>
-
-        		<h4><%= yield(:title).upcase %></h4>
-	            </br>
-	            <p>
-	           	My favorite photos from various portraiture sessions. <a href="<%= photographer_services_path %>">Back to</a> information about my services. 
 	            </p>
 	        	</br>
 
