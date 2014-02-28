@@ -5098,6 +5098,10 @@ hr {
 
 .dropdown {
   text-align: left; }
+
+.foodie-thumb {
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px; }
 /* Galleria Classic Theme 2012-08-07 | https://raw.github.com/aino/galleria/master/LICENSE | (c) Aino */
 
 #galleria-loader{height:1px!important}

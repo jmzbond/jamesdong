@@ -20,7 +20,7 @@
         <div class="col-xs-12 col-xs-offset-3">
             <% @favimages.each do |image| %>
             <div class="col-xs-2">
-                <%= link_to(image_tag("Photographer thumbnails/#{image}.jpg", class: "img-responsive"), "photographer/#{image.downcase.tr(' ','_')}", class: "thumbnail") %>
+                <%= link_to(image_tag("Photographer thumbnails/#{image}.jpg", class: "img-responsive", alt: "#{image}", title: "#{image}"), "photographer/#{image.downcase.tr(' ','_')}", class: "thumbnail") %>
                 <h6><%= "#{image}" %></h6>
             </div>
             <% end %>
@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-xs-offset-3">
             <% @seriesimages.each do |image| %>
             <div class="col-xs-2">
-                <%= link_to(image_tag("Photographer thumbnails/#{image}.jpg", class: "img-responsive"), "photographer/#{image.downcase.tr(' ','_')}", class: "thumbnail") %>
+                <%= link_to(image_tag("Photographer thumbnails/#{image}.jpg", class: "img-responsive", alt: "#{image}", title: "#{image}"), "photographer/#{image.downcase.tr(' ','_')}", class: "thumbnail") %>
                 <h6><%= "#{image}" %></h6>
             </div>
             <% end %>

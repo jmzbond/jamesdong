@@ -12,3 +12,13 @@
             </br>
         </div>
         <hr>
+
+        <div class="col-xs-9 col-xs-offset-2">
+            <% @images.each do |image| %>
+            <div class="col-xs-2 foodie-thumb"> 
+                <%= image_tag("Foodie thumbnails/#{image}.jpg", class: "img-responsive", alt: "#{image}", title: "#{image}") %>
+            </div>
+
+            <% end %>
+        </br>
+        </div>
