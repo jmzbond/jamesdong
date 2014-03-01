@@ -42,6 +42,7 @@
 	            <p>
 	            I recently went on an expedition to South Georgia, the Falkland Islands, & Antarctica. The entire trip I felt so… big&#8212;like a giant whose next step would be a crush. As someone who grew up immersed in environmental sustainability, this reaction surprised me. But it was easy to see why&#8212;walking physically among hundreds of thousands of penguins & seals, I could see how much they reacted to my presence from even an Olympic swimming pool's distance away. With these photographs, I wanted to show the faces of those changed forever by decisions we make everyday, from half a planet away. <%= Contact::CONTACTME %>
 	            </p>
+	            <%= render 'layouts/sharebutton' %>
 	        	</br>
 
         	<% elsif content_for(:title) == 'The Stars Reply' %>
@@ -51,6 +52,7 @@
 	            <p>
 	            The Sigma Phi Society is the nation's oldest continually operating fraternity, yet it is also one of the smallest with only 10 chapters. Once a year, a national convention calls members together. Starting as strangers grasping at threads of commonality, these men leave as brothers woven together by a profound history and identity. <%= Contact::CONTACTME %>
 	            </p>
+	            <%= render 'layouts/sharebutton' %>
 	        	</br>
 
         	<% elsif content_for(:title) == 'Reflections in Yosemite' %>
@@ -60,6 +62,7 @@
 	            <p>
 	            Photographs that capture the continuously changing dynamic of Yosemite National Park. <%= Contact::CONTACTME %>
 	            </p>
+	            <%= render 'layouts/sharebutton' %>
 	        	</br>
 
         	<% elsif content_for(:title) == 'Natural Environments' %>
@@ -69,6 +72,7 @@
 	            <p>
 	            A selection of my favorite photographs of the wild outdoors (with some minor urban or human features!). <%= Contact::CONTACTME %>
 	            </p>
+	            <%= render 'layouts/sharebutton' %>
 	        	</br>
 
         	<% elsif content_for(:title) == 'Urban Playgrounds' %>
@@ -78,6 +82,7 @@
 	            <p>
 	            A selection of my favorite photographs of cityscapes and the things we build. <%= Contact::CONTACTME %>
 	            </p>
+	            <%= render 'layouts/sharebutton' %>
 	        	</br>
 
         	<% elsif content_for(:title) == 'Human Expressions' %>
@@ -87,7 +92,12 @@
 	            <p>
 	            A selection of my favorite photographs of unsuspecting friends and strangers. Here I try to really capture the fleeting masks we're constantly peeking out from behind. <%= Contact::CONTACTME %>
 	            </p>
+	            <%= render 'layouts/sharebutton' %>
 	        	</br>
+
+
+        
+
 
         	<% end %>
     </div>
