@@ -45,6 +45,8 @@
         <div class="galleria">
         </div>
             <script>
+                window.onload = function(){
+
                 for (var image in gon.images) {
                     document.getElementById(image).onclick = (function(image) {
                       return function() {
@@ -60,6 +62,8 @@
                         });
                       }
                     })(image);
+                }
+
                 }
 
             </script>
