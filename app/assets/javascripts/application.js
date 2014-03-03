@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require galleria-1.3.5.min
 //= require galleria.classic.min
@@ -21,3 +20,5 @@
 
 // Loads all Bootstrap javascripts
 //= require bootstrap
+
+// Removed require turbolinks
