@@ -27,77 +27,31 @@
 
 <!--only other change made to original galleria theme is to replace all instances of url_l with url_h in galleria.flickr.js and galleria.flicker.min.js. this allows the API to pull 1600 images when option is set to big instead of 1024, and improves quality. see reference : http://support.galleria.io/discussions/questions/4730-flickr-plugin-image-size -->
 
-</head>
+<div class="col-xs-10 col-xs-offset-1">
 
-<body>
+	<h4><%= @title %></h4>
+    </br>
 
-<div class="container-fluid">
+    <p><%= @galleryinfo[@title] %> If you're interested in purchasing a print, <a href='/contacts/new'>please contact me.</a></p>
+    <%= render 'layouts/sharebutton' %>
+	</br>
 
-	    <div class="col-xs-10 col-xs-offset-1">
-			
-			<% if content_for(:title) == 'The Deep South' %>
-
-				<h4><%= yield(:title).upcase %></h4>
-	            </br>
-	            <p>
-	            I recently went on an expedition to South Georgia, the Falkland Islands, & Antarctica. The entire trip I felt so… big&#8212;like a giant whose next step would be a crush. As someone who grew up immersed in environmental sustainability, this reaction surprised me. But it was easy to see why&#8212;walking physically among hundreds of thousands of penguins & seals, I could see how much they reacted to my presence from even an Olympic swimming pool's distance away. With these photographs, I wanted to show the faces of those changed forever by decisions we make everyday, from half a planet away. <%= Contact::CONTACTME %>
-	            </p>
-	            <%= render 'layouts/sharebutton' %>
-	        	</br>
-
-        	<% elsif content_for(:title) == 'The Stars Reply' %>
-
-        		<h4><%= yield(:title).upcase %></h4>
-	            </br>
-	            <p>
-	            The Sigma Phi Society is the nation's oldest continually operating fraternity, yet it is also one of the smallest with only 10 chapters. Once a year, a national convention calls members together. Starting as strangers grasping at threads of commonality, these men leave as brothers woven together by a profound history and identity. <%= Contact::CONTACTME %>
-	            </p>
-	            <%= render 'layouts/sharebutton' %>
-	        	</br>
-
-        	<% elsif content_for(:title) == 'Reflections in Yosemite' %>
-
-        		<h4><%= yield(:title).upcase %></h4>
-	            </br>
-	            <p>
-	            Photographs that capture the continuously changing dynamic of Yosemite National Park. <%= Contact::CONTACTME %>
-	            </p>
-	            <%= render 'layouts/sharebutton' %>
-	        	</br>
-
-        	<% elsif content_for(:title) == 'Natural Environments' %>
-
-        		<h4><%= yield(:title).upcase %></h4>
-	            </br>
-	            <p>
-	            A selection of my favorite photographs of the wild outdoors (with some minor urban or human features!). <%= Contact::CONTACTME %>
-	            </p>
-	            <%= render 'layouts/sharebutton' %>
-	        	</br>
-
-        	<% elsif content_for(:title) == 'Urban Playgrounds' %>
-
-        		<h4><%= yield(:title).upcase %></h4>
-	            </br>
-	            <p>
-	            A selection of my favorite photographs of cityscapes and the things we build. <%= Contact::CONTACTME %>
-	            </p>
-	            <%= render 'layouts/sharebutton' %>
-	        	</br>
-
-        	<% elsif content_for(:title) == 'Human Expressions' %>
-
-        		<h4><%= yield(:title).upcase %></h4>
-	            </br>
-	            <p>
-	            A selection of my favorite photographs of unsuspecting friends and strangers. Here I try to really capture the fleeting masks we're constantly peeking out from behind. <%= Contact::CONTACTME %>
-	            </p>
-	            <%= render 'layouts/sharebutton' %>
-	        	</br>
+</div>
 
 
-        
-
-
-        	<% end %>
-    </div>
+<div class="col-xs-12">
+	<div class="galleria">
+	</div>
+	<script>
+        Galleria.loadTheme("<%= asset_path 'galleria.classic.min.js' %>");
+        Galleria.run('.galleria', {
+		    responsive: true,   // Adapt to screen size
+	        height: 0.5625,      // Keep a 16:9 aspect ratio
+	        showCounter: false,
+	        flickr: "set:" + gon.galleryset[gon.title],
+	        flickrOptions: {
+		        imageSize: 'big'
+		    }
+		});
+    </script>
+</div>

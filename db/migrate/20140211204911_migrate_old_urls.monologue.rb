@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20120526131841)
 class MigrateOldUrls < ActiveRecord::Migration
   class Monologue::PostsRevision < ActiveRecord::Base

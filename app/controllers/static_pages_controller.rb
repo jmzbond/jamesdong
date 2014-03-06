@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class StaticPagesController < ApplicationController
 
   def home
@@ -86,34 +87,42 @@ class StaticPagesController < ApplicationController
 
     def urban
       @photopage = true
-      @gallerypage = true
+      @title = "Urban Playgrounds"
+      galleryinfo
     end
 
     def people
       @photopage = true
-      @gallerypage = true
+      @title = "Human Expressions"
+      galleryinfo
     end
 
     def nature
       @photopage = true
-      @gallerypage = true
+      @title = "Natural Environments"
+      galleryinfo
     end
 
     def sigphi
       @photopage = true
-      @gallerypage = true
+      @title = "The Stars Reply"
+      galleryinfo
     end
 
     def antarctica
       @photopage = true
-      @gallerypage = true
-      @test = 72157640607666844
-      gon.test = @test
+      @title = "The Deep South"
+      galleryinfo
+    end
+
+    def yosemite
+      @photopage = true
+      @title = "Reflections in Yosemite"
+      galleryinfo
     end
 
     def services
       @photopage = true
-      @gallerypage = true
       @images = {
         "UC Berkeley Engagement" => "72157640765167734", 
         "Crissy Field Vacation Shots" => "72157640763199093", 
@@ -129,13 +138,32 @@ class StaticPagesController < ApplicationController
       gon.images = @images
     end
 
-    def yosemite
-      @photopage = true
-      @gallerypage = true
-    end
-
       def faq
         @photopage = true
       end
+
+
+  private
+
+  def galleryinfo
+    @galleryinfo = {
+      "The Deep South" => "I recently went on an expedition to South Georgia, the Falkland Islands, & Antarctica. The entire trip I felt so… big; like a giant whose next step would be a crush. As someone who grew up immersed in environmental sustainability, this reaction surprised me. But it was easy to see why; walking physically among hundreds of thousands of penguins & seals, I could see how much they reacted to my presence from even an Olympic swimming pool's distance away. With these photographs, I wanted to show the faces of those changed forever by decisions we make everyday, from half a planet away.",
+      "The Stars Reply" => "The Sigma Phi Society is the nation's oldest continually operating fraternity, yet it is also one of the smallest with only 10 chapters. Once a year, a national convention calls members together. Starting as strangers grasping at threads of commonality, these men leave as brothers woven together by a profound history and identity.",
+      "Reflections in Yosemite" => "Photographs that capture the continuously changing dynamic of Yosemite National Park.",
+      "Urban Playgrounds" => "A selection of my favorite photographs of cityscapes and the things we build.", 
+      "Natural Environments" => "A selection of my favorite photographs of the wild outdoors (with some minor urban or human features!).", 
+      "Human Expressions" => "A selection of my favorite photographs of unsuspecting friends and strangers. Here I try to really capture the fleeting masks we're constantly peeking out from behind."
+    }
+    @galleryset = {
+      "The Deep South" => "72157640607666844",
+      "The Stars Reply" => "72157640607311854",
+      "Reflections in Yosemite" => "72157640607561055",
+      "Urban Playgrounds" => "72157640611296255",
+      "Natural Environments" => "72157640612568393",
+      "Human Expressions" => "72157640610294955"
+    }
+    gon.galleryset = @galleryset
+    gon.title = @title
+  end
 
 end

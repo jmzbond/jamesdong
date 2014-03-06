@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20120120193907)
 class CreateMonologuePosts < ActiveRecord::Migration
   def change

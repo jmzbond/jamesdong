@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20120612020023)
 class AddIndexToTagName < ActiveRecord::Migration
   def change

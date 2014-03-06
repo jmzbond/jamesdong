@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20120514194459)
 class JoinPostsAndTags < ActiveRecord::Migration
   def change

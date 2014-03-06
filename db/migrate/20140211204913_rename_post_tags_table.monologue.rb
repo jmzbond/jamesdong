@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20120604010152)
 class RenamePostTagsTable < ActiveRecord::Migration
   def change

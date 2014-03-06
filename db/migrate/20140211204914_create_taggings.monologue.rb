@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20120612013442)
 class CreateTaggings < ActiveRecord::Migration
   def change

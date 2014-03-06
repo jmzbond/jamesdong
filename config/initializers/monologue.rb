@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 =begin
 Monologue.config do |config|
   config.site_name = "James Dong"

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20120526195147)
 class AddIndexToPostsRevisionUrl < ActiveRecord::Migration
   def change

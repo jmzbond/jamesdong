@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Jamesdong::Application.routes.draw do
 
   root 'static_pages#home'

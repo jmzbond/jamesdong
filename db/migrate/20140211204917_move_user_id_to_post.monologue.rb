@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This migration comes from monologue (originally 20130108123111)
 class MoveUserIdToPost < ActiveRecord::Migration
   class Monologue::PostsRevision < ActiveRecord::Base

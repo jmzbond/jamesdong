@@ -1,22 +1,2 @@
-<% provide(:title, 'Natural Environments') %>
-
-	<div class="col-xs-12">
-		<div class="galleria">
-		</div>
-		<script>
-	        window.onload = function(){
-
-	        Galleria.loadTheme("<%= asset_path 'galleria.classic.min.js' %>");
-	        Galleria.run('.galleria', {
-			    responsive: true,   // Adapt to screen size
-		        height: 0.5625,      // Keep a 16:9 aspect ratio
-		        showCounter: false,
-		        flickr: 'set:72157640612568393',
-		        flickrOptions: {
-			        imageSize: 'big'
-			    }
-			});
-
-	    	}
-	    </script>
-	</div>
+<% provide(:title, @title) %>
+<%= render 'layouts/galleryhead' %>

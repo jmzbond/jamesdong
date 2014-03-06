@@ -1,70 +1,94 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="<%= asset_path 'galleria-1.3.5.min.js' %>" ></script>
+<script src="<%= asset_path 'galleria.flickr.min.js' %>" ></script>
+<script src="<%= asset_path 'galleria.classic.min.js' %>" ></script>
+
+<style>
+/*Note original galleria.classic.css completely untouched, all changes built on top of it here*/
+
+/* changes size of container, combines with height 0.5625 aspect ratio in actual html view */
+.galleria { width: 90%; margin: 0 auto }
+
+/* converts to transparent background*/
+.galleria-container { background: transparent }
+.galleria-counter { color: transparent } 
+
+/*centers the title of the image across the galleria box rather than fixed to upper left hand corner. note, the information toggler turned off in native min.JS and JS (line 23) files for theme*/
+.galleria-info { width: 100%; top: 0px; left: 0px }
+.galleria-info-text { text-align: center; background-color: transparent }
+.galleria-info-title { font: bold 12px/1.1 arial,sans-serif; color: black; opacity: 0.6;}
+
+/* creates enough space for title */
+.galleria-stage { margin-top: 30px }
+
+/*centers row of thumbnails*/
+.galleria-thumbnails { margin: auto }
+</style>
+
+<!--only other change made to original galleria theme is to replace all instances of url_l with url_h in galleria.flickr.js and galleria.flicker.min.js. this allows the API to pull 1600 images when option is set to big instead of 1024, and improves quality. see reference : http://support.galleria.io/discussions/questions/4730-flickr-plugin-image-size -->
+
 <% provide(:title, 'Photography Services') %>
 
-    <div class="col-xs-10 col-xs-offset-1">
-            <h4>MEMORIES OF THAT ONCE-UPON-A-TIME MOMENT</h4>
-            </br>
-            <p>
-            The first time I gave a performance, I was in elementary school.  Standing in front of an audience that appeared to number in the bajillions, I shoved my hands into my pants.  Could everyone see them shaking beneath the thin cotton?  Yet somehow, everything turned out beautifully.  As the applause faded, and the crowd stood to clap, I beamed into the camera.  Whenever I see that photograph, I still smile to myself.  These are the happy memories I want each photo to evoke for you.</p>
-            <p><a href="<%= new_contact_path %>">Contact me</a> to get started. Or see some of my favorite photos from previous sessions below.</p> 
-        	
-            <p><b>Process</b></p>
-            <ol>
-            	<li><u>Free phone consultation</u> - Let me know what you need (individual portraits, couples engagements, styles, locations, etc.).</li>
-            	<li><u>Booking confirmation</u> - Please complete a formal agreement and pay the 50% deposit to confirm the session.</li> 
-				<li><u>Day-of shoot</u> - Meet & shoot; have fun and be yourself!</li>
-				<li><u>Initial review</u> - Review photos, request edits, & select final photos to keep.</li>
-				<li><u>Final distribution</u> - Receive your photos!</li>
-            </ol>
-	        <p><b>Pricing</b></p>
-            <ul>
-                <li>$200 for a 1-hour session</li>
-				<li>$100 for a 1-hour session</li> 
-            </ul>
-            <p>If you have more questions, <a href="<%= photographer_services_faq_path %>">check out the FAQ!</a></p>
-            <%= render 'layouts/sharebutton' %>
-            <hr>           
-    </div>
-
-    <div class="col-xs-10 col-xs-offset-1" id="portrait-portfolio">
-        <h4>Portrait Portfolio</h4>
+<div class="col-xs-10 col-xs-offset-1">
+        <h4>MEMORIES OF THAT ONCE-UPON-A-TIME MOMENT</h4>
         </br>
-    </div>
-        
-    <div class="col-xs-12 col-xs-offset-1">
-        <% @images.each do |image, key| %>
-        <div class="col-xs-1" id="<%= "#{image}" %>"> 
-            <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive thumbnail", alt: "#{image}", title: "#{image}") %>
-            <h6><%= "#{image}" %></h6>
-        </div>
+        <p>
+        The first time I gave a performance, I was in elementary school.  Standing in front of an audience that appeared to number in the bajillions, I shoved my hands into my pants.  Could everyone see them shaking beneath the thin cotton?  Yet somehow, everything turned out beautifully.  As the applause faded, and the crowd stood to clap, I beamed into the camera.  Whenever I see that photograph, I still smile to myself.  These are the happy memories I want each photo to evoke for you.</p>
+        <p><a href="<%= new_contact_path %>">Contact me</a> to get started. Or see some of my favorite photos from previous sessions below.</p> 
+    	
+        <p><b>Process</b></p>
+        <ol>
+        	<li><u>Free phone consultation</u> - Let me know what you need (individual portraits, couples engagements, styles, locations, etc.).</li>
+        	<li><u>Booking confirmation</u> - Please complete a formal agreement and pay the 50% deposit to confirm the session.</li> 
+			<li><u>Day-of shoot</u> - Meet & shoot; have fun and be yourself!</li>
+			<li><u>Initial review</u> - Review photos, request edits, & select final photos to keep.</li>
+			<li><u>Final distribution</u> - Receive your photos!</li>
+        </ol>
+        <p><b>Pricing</b></p>
+        <ul>
+            <li>$200 for a 1-hour session</li>
+			<li>$100 for a 1-hour session</li> 
+        </ul>
+        <p>If you have more questions, <a href="<%= photographer_services_faq_path %>">check out the FAQ!</a></p>
+        <%= render 'layouts/sharebutton' %>
+        <hr>           
+</div>
 
-        <% end %>
+<div class="col-xs-10 col-xs-offset-1" id="portrait-portfolio">
+    <h4>Portrait Portfolio</h4>
     </br>
+</div>
+    
+<div class="col-xs-12 col-xs-offset-1">
+    <% @images.each do |image, key| %>
+    <div class="col-xs-1" id="<%= "#{image}" %>"> 
+        <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive thumbnail", alt: "#{image}", title: "#{image}") %>
+        <h6><%= "#{image}" %></h6>
     </div>
 
-    <div class="col-xs-12">
-        <div class="galleria">
-        </div>
-            <script>
-                window.onload = function(){
+    <% end %>
+</br>
+</div>
 
-                for (var image in gon.images) {
-                    document.getElementById(image).onclick = (function(image) {
-                      return function() {
-                        Galleria.loadTheme("<%= asset_path 'galleria.classic.min.js' %>");
-                        Galleria.run('.galleria', {
-                            responsive: true,   // Adapt to screen size
-                            height: 0.5625,      // Keep a 16:9 aspect ratio
-                            showCounter: false,
-                            flickr:"set:" + gon.images[image],
-                            flickrOptions: {
-                                imageSize: 'big'
-                            }
-                        });
-                      }
-                    })(image);
-                }
-
-                }
-
-            </script>
+<div class="col-xs-12">
+    <div class="galleria">
     </div>
+        <script>
+            for (var image in gon.images) {
+                document.getElementById(image).onclick = (function(image) {
+                  return function() {
+                    Galleria.loadTheme("<%= asset_path 'galleria.classic.min.js' %>");
+                    Galleria.run('.galleria', {
+                        responsive: true,   // Adapt to screen size
+                        height: 0.5625,      // Keep a 16:9 aspect ratio
+                        showCounter: false,
+                        flickr:"set:" + gon.images[image],
+                        flickrOptions: {
+                            imageSize: 'big'
+                        }
+                    });
+                  }
+                })(image);
+            }
+        </script>
+</div>
