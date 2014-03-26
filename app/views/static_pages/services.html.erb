@@ -59,7 +59,7 @@
     </br>
 </div>
     
-<div class="col-xs-12 col-xs-offset-1">
+<div class="col-xs-12" style="margin-left: 50px;">
     <% @images.each do |image, key| %>
     <div class="col-xs-1" id="<%= "#{image}" %>"> 
         <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive thumbnail", alt: "#{image}", title: "#{image}") %>
