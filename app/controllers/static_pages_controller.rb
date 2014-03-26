@@ -134,6 +134,7 @@ class StaticPagesController < ApplicationController
         "Palace of Fine Arts Engagement" => "72157640761383585", 
         "Palace of Fine Arts Photoshoot" => "72157640764253653", 
         "Engagement Party" => "72157640764682524"
+        "Hotel Interior Photoshoot" => "72157642934298005",
       }
       gon.images = @images
     end
