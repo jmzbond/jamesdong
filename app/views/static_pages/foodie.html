@@ -15,9 +15,9 @@
         <hr>
 
         <div class="col-xs-9 col-xs-offset-2">
-            <% Dir.glob("app/assets/images/Foodie thumbnails/*").map do |path| %>
+            <% Dir.glob("app/assets/images/Foodie thumbnails/*").shuffle.each do |path| %>
                 <div class="col-xs-2 foodie-thumb"> 
-                    <%= image_tag("Foodie thumbnails/#{ File.basename(path) }", class: "img-responsive", alt: "#{ File.basename(path, ".jpg") }", title: "#{ File.basename(path, ".jpg") }"), "#", class: "thumbnail", style: "margin:0") %>
+                    <%= image_tag("Foodie thumbnails/#{ File.basename(path) }", class: "img-responsive", alt: "#{ File.basename(path, ".jpg") }", title: "#{ File.basename(path, ".jpg") }") %>
                 </div>
             <% end %>
 

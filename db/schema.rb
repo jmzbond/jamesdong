@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211204918) do
+ActiveRecord::Schema.define(version: 20140211204910) do
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -22,31 +22,30 @@ ActiveRecord::Schema.define(version: 20140211204918) do
   end
 
   create_table "monologue_posts", force: true do |t|
+    t.integer  "posts_revision_id"
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+  end
+
+  create_table "monologue_posts_revisions", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.string   "url"
+    t.integer  "user_id"
+    t.integer  "post_id"
     t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "monologue_posts", ["url"], name: "index_monologue_posts_on_url", unique: true
-
-  create_table "monologue_taggings", force: true do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
-  end
-
-  add_index "monologue_taggings", ["post_id"], name: "index_monologue_taggings_on_post_id"
-  add_index "monologue_taggings", ["tag_id"], name: "index_monologue_taggings_on_tag_id"
+  add_index "monologue_posts_revisions", ["id"], name: "index_monologue_posts_revisions_on_id", unique: true
+  add_index "monologue_posts_revisions", ["post_id"], name: "index_monologue_posts_revisions_on_post_id"
+  add_index "monologue_posts_revisions", ["published_at"], name: "index_monologue_posts_revisions_on_published_at"
 
   create_table "monologue_tags", force: true do |t|
     t.string "name"
   end
-
-  add_index "monologue_tags", ["name"], name: "index_monologue_tags_on_name"
 
   create_table "monologue_users", force: true do |t|
     t.string   "name"
@@ -56,12 +55,9 @@ ActiveRecord::Schema.define(version: 20140211204918) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "request"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "posts_tags", id: false, force: true do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
   end
 
 end
