@@ -15,11 +15,15 @@
         <hr>
 
         <div class="col-xs-9 col-xs-offset-2">
-            <% @images.each do |image| %>
-            <div class="col-xs-2 foodie-thumb"> 
-                <%= image_tag("Foodie thumbnails/#{image}.jpg", class: "img-responsive", alt: "#{image}", title: "#{image}") %>
-            </div>
-
+            <% Dir.glob("app/assets/images/Foodie thumbnails/*").map do |path| %>
+                <div class="col-xs-2 foodie-thumb"> 
+                    <%= image_tag("Foodie thumbnails/#{ File.basename(path) }", class: "img-responsive", alt: "#{ File.basename(path, ".jpg") }", title: "#{ File.basename(path, ".jpg") }"), "#", class: "thumbnail", style: "margin:0") %>
+                </div>
             <% end %>
+
+            <%# @images.each do |image| %>
+
+                <%#= image_tag("Foodie thumbnails/#{image}.jpg", class: "img-responsive", alt: "#{image}", title: "#{image}") %>
+
         </br>
         </div>
