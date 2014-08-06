@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
   def photographer
     @photopage = true
     @favimages = ["Natural Environments", "Urban Playgrounds", "Human Expressions"]
-    @seriesimages = ["The Deep South", "The Stars Reply", "Reflections in Yosemite"]
+    @seriesimages = ["The Deep South", "The Stars Reply", "Reflections in Yosemite", "Seafair in Seattle"]
   end
 
     def urban
@@ -55,6 +55,12 @@ class StaticPagesController < ApplicationController
       galleryinfo
     end
 
+    def seafair
+      @photopage = true
+      @title = "Seafair in Seattle"
+      galleryinfo
+    end
+
     def services
       @photopage = true
       @images = {
@@ -89,7 +95,8 @@ class StaticPagesController < ApplicationController
       "Reflections in Yosemite" => "Photographs that capture the continuously changing dynamic of Yosemite National Park.",
       "Urban Playgrounds" => "A selection of my favorite photographs of cityscapes and the things we build.", 
       "Natural Environments" => "A selection of my favorite photographs of the wild outdoors (with some minor urban or human features!).", 
-      "Human Expressions" => "A selection of my favorite photographs of unsuspecting friends and strangers. Here I try to really capture the fleeting masks we're constantly peeking out from behind."
+      "Human Expressions" => "A selection of my favorite photographs of unsuspecting friends and strangers. Here I try to really capture the fleeting masks we're constantly peeking out from behind.",
+      "Seafair in Seattle" => "My first time really watching the spectacular aerial displays from the Blue Angels and other planes during Seattle's annual Seafair Festival"
     }
     @galleryset = {
       "The Deep South" => "72157640607666844",
@@ -97,7 +104,8 @@ class StaticPagesController < ApplicationController
       "Reflections in Yosemite" => "72157640607561055",
       "Urban Playgrounds" => "72157640611296255",
       "Natural Environments" => "72157640612568393",
-      "Human Expressions" => "72157640610294955"
+      "Human Expressions" => "72157640610294955",
+      "Seafair in Seattle" => "72157645819457720"
     }
     gon.galleryset = @galleryset
     gon.title = @title

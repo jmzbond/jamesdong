@@ -13,6 +13,7 @@ Jamesdong::Application.routes.draw do
     match '/photographer/natural_environments',      to: 'static_pages#nature',              via: 'get'
     match '/photographer/the_stars_reply',           to: 'static_pages#sigphi',              via: 'get'
     match '/photographer/the_deep_south',            to: 'static_pages#antarctica',          via: 'get'
+    match '/photographer/seafair_in_seattle',        to: 'static_pages#seafair',             via: 'get'
     match '/photographer/reflections_in_yosemite',   to: 'static_pages#yosemite',            via: 'get'
     match '/photographer/services',                  to: 'static_pages#services',            via: 'get'
       match '/photographer/services/faq',            to: 'static_pages#faq',                 via: 'get'
