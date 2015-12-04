@@ -60,9 +60,9 @@
     </br>
 </div>
 
-<% @images.each_slice(9).with_index do |images, slice| %> 
+<% @images.each_slice(8).with_index do |images, slice| %> 
     <% if slice == 0 %>
-        <div class="col-xs-12" style="margin-left:12%;">
+        <div class="col-xs-12 col-xs-offset-2">
             <% images.each do |image, key| %>
                 <div class="col-xs-1" id="<%= "#{image}" %>"> 
                     <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive thumbnail services", alt: "#{image}", title: "#{image}") %>
@@ -72,7 +72,7 @@
             </br>
         </div>
     <% else %>
-        <div class="col-xs-12 col-xs-offset-4">
+        <div class="col-xs-12 col-xs-offset-3">
             <% images.each do |image, key| %>
                 <div class="col-xs-1" id="<%= "#{image}" %>"> 
                     <%= image_tag("Portrait thumbnails/#{image}.jpg", class: "img-responsive thumbnail services", alt: "#{image}", title: "#{image}") %>
