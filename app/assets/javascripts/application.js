@@ -17,8 +17,4 @@
 //= require galleria.classic.min
 //= require galleria.flickr.min
 
-
-// Loads all Bootstrap javascripts
-//= require bootstrap
-
 // Removed require turbolinks
