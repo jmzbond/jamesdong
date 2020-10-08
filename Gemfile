@@ -46,6 +46,8 @@ end
 
 group :production do
   gem 'pg', '~> 0.20'
+  # even though this is in group production, when you try to run bundle exec rake assets precompile, it complains there's an issue
+  # so basically right before running rake assts precompile, i revert this to 0.17.1, and then just don't save before pushing to production
   gem 'rails_12factor', '0.0.2'
 end
 
